@@ -1,0 +1,10 @@
+{
+  "extends": ["@react-native-community", "plugin:react/jsx-runtime"],
+  "rules": {
+    "semi": "off",
+    "curly": ["warn", "multi-or-nest", "consistent"],
+    "react/no-unstable-nested-components": "off",
+    "react-native/no-inline-styles": "off",
+    "@typescript-eslint/no-unused-vars": "off"
+  }
+}
