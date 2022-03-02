@@ -10,7 +10,7 @@ export const theme = createTheme({
     black: 'black',
     white: 'white',
     gray: 'gray',
-    caption: 'lightgray',
+    caption: 'gray',
   },
   spacing: {
     xs: 4,
@@ -57,6 +57,5 @@ export const darkTheme: Theme = {
   colors: {
     ...theme.colors,
     ...NavigationDarkTheme.colors,
-    caption: 'gray',
   },
 }
