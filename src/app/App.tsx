@@ -4,14 +4,16 @@ import { StatusBar } from 'expo-status-bar'
 import { useColorScheme } from 'react-native'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 import useCachedResources from '../hooks/useCachedResources'
+import usePrefetchData from '../hooks/usePrefetchData'
 import Navigation from '../navigation'
 import { darkTheme, theme } from '../styles/restyle'
 
 export default function App() {
   const isLoadingComplete = useCachedResources()
+  const isDataPrefetched = usePrefetchData()
   const colorScheme = useColorScheme()
 
-  if (!isLoadingComplete) return null
+  if (!isLoadingComplete || !isDataPrefetched) return null
 
   return (
     <SafeAreaProvider>
