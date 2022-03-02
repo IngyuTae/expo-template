@@ -6,15 +6,22 @@
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import * as React from 'react'
+import { useColorScheme } from 'react-native'
 import ModalScreen from '../screens/ModalScreen'
 import NotFoundScreen from '../screens/NotFoundScreen'
+import { darkTheme, theme } from '../styles/navigation'
 import LinkingConfiguration from './LinkingConfiguration'
 import BottomTabNavigator from './RootTab'
 import { RootStackParamList } from './types'
 
 export default function Navigation() {
+  const colorScheme = useColorScheme()
+
   return (
-    <NavigationContainer linking={LinkingConfiguration}>
+    <NavigationContainer
+      linking={LinkingConfiguration}
+      theme={colorScheme === 'dark' ? darkTheme : theme}
+    >
       <RootNavigator />
     </NavigationContainer>
   )
