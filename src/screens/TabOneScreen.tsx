@@ -1,8 +1,9 @@
-import { Button, StyleSheet, Text, View } from 'react-native'
+import { Columns, Rows } from '@mobily/stacks'
+import { Button } from 'react-native'
+import { Text } from '../components/ReStyle'
 import { RootTabScreenProps } from '../navigation/types'
 import useMemory from '../stores/useMemory'
 import useStorage from '../stores/useStorage'
-
 export default function TabOneScreen({
   navigation,
 }: RootTabScreenProps<'TabOne'>) {
@@ -12,36 +13,15 @@ export default function TabOneScreen({
   const toggleDisclosure = useStorage((state) => state.toggleDisclosure)
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
-      <Text style={styles.number}>123,123,123</Text>
-      <View style={styles.separator} />
-      <Text style={styles.title}>Loading: {loading ? 1 : 0}</Text>
-      <Text style={styles.title}>Disclosure: {disclosure ? 1 : 0}</Text>
-      <View style={styles.separator} />
-      <Button title="Toggle Loading" onPress={toggleLoading} />
-      <Button title="Toggle Disclosure" onPress={toggleDisclosure} />
-    </View>
+    <Rows space={4} padding={4}>
+      <Text variant="largeTitle">Tab One</Text>
+      <Text variant="headline">123,123,123</Text>
+      <Text>Loading: {loading ? 1 : 0}</Text>
+      <Text>Disclosure: {disclosure ? 1 : 0}</Text>
+      <Columns space={4}>
+        <Button title="Toggle Loading" onPress={toggleLoading} />
+        <Button title="Toggle Disclosure" onPress={toggleDisclosure} />
+      </Columns>
+    </Rows>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  number: {
-    fontSize: 20,
-    fontFamily: 'Spoqa-Regular',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
-})

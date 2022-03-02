@@ -1,3 +1,4 @@
+import { StacksProvider } from '@mobily/stacks'
 import { ThemeProvider } from '@shopify/restyle'
 import { StatusBar } from 'expo-status-bar'
 import { useColorScheme } from 'react-native'
@@ -15,8 +16,10 @@ export default function App() {
   return (
     <SafeAreaProvider>
       <ThemeProvider theme={colorScheme === 'dark' ? darkTheme : theme}>
-        <Navigation />
-        <StatusBar />
+        <StacksProvider spacing={4}>
+          <Navigation />
+          <StatusBar />
+        </StacksProvider>
       </ThemeProvider>
     </SafeAreaProvider>
   )
