@@ -15,7 +15,11 @@ export default function useCachedResources() {
         // Load fonts
         await Font.loadAsync({
           ...FontAwesome.font,
-          'space-mono': require('../../assets/fonts/SpaceMono-Regular.ttf'),
+          'Spoqa-Thin': require('../../assets/fonts/SpoqaHanSansNeo-Thin.ttf'),
+          'Spoqa-Light': require('../../assets/fonts/SpoqaHanSansNeo-Light.ttf'),
+          'Spoqa-Regular': require('../../assets/fonts/SpoqaHanSansNeo-Regular.ttf'),
+          'Spoqa-Medium': require('../../assets/fonts/SpoqaHanSansNeo-Medium.ttf'),
+          'Spoqa-Bold': require('../../assets/fonts/SpoqaHanSansNeo-Bold.ttf'),
         })
       } catch (e) {
         // We might want to provide this error information to an error reporting service

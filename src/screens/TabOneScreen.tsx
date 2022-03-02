@@ -14,6 +14,7 @@ export default function TabOneScreen({
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Tab One</Text>
+      <Text style={styles.number}>123,123,123</Text>
       <View style={styles.separator} />
       <Text style={styles.title}>Loading: {loading ? 1 : 0}</Text>
       <Text style={styles.title}>Disclosure: {disclosure ? 1 : 0}</Text>
@@ -33,6 +34,10 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     fontWeight: 'bold',
+  },
+  number: {
+    fontSize: 20,
+    fontFamily: 'Spoqa-Regular',
   },
   separator: {
     marginVertical: 30,
