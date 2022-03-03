@@ -26,7 +26,6 @@
     "@shopify/polaris-tokens": "^4.0.0",
     "@shopify/restyle": "^1.7.0",
     "axios": "^0.26.0",
-    "axios-retry": "^3.2.4",
     "expo": "~44.0.0",
     "expo-asset": "~8.4.4",
     "expo-constants": "~13.0.0",
